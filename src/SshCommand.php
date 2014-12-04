@@ -29,7 +29,7 @@ class SshCommand extends Command {
 	{
 		chdir(__DIR__.'/../');
 
-		passthru('VAGRANT_DOTFILE_PATH="~/.homestead/.vagrant" vagrant ssh');
+		passthru('VAGRANT_DOTFILE_PATH=$_ENV["VAGRANT_DOTFILE_PATH"] vagrant ssh');
 	}
 
 }
