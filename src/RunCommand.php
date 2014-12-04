@@ -34,7 +34,7 @@ class RunCommand extends Command {
 
 		$command = $input->getArgument('ssh-command');
 
-		passthru('VAGRANT_DOTFILE_PATH="~/.homestead/.vagrant" vagrant ssh -c "'.$command.'"');
+		passthru('VAGRANT_DOTFILE_PATH=$_ENV["VAGRANT_DOTFILE_PATH"] vagrant ssh -c "'.$command.'"');
 	}
 
 }
